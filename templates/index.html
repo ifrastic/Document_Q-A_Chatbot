@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat - Document AI</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <h2>Document AI</h2>
+            <p>Ask questions about your files</p>
+
+            <nav class="side-nav">
+                <a href="/" class="nav-link active">Chat</a>
+                <a href="/documents" class="nav-link">Documents</a>
+            </nav>
+
+            <button type="button" id="newChat">+ New Chat</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="page-header">
+                <h1>Chat</h1>
+                <p>Choose a document and ask questions about its content.</p>
+            </header>
+
+            <!-- Chat Section -->
+            <section class="chat-section">
+                <h2>Chat with Your Documents</h2>
+
+                <label for="documentSelect">Choose a document:</label>
+
+                <select id="documentSelect">
+                    <option value="">Select a document</option>
+                </select>
+
+                <div id="chatMessage" class="chat-messages">
+                    <div class="welcome-message">
+                        <h3>How can I help you?</h3>
+
+                        <p>
+                            Select a document and ask a question.
+                            No documents yet? Upload one on the
+                            <a href="/documents">Documents</a> page.
+                        </p>
+                    </div>
+                </div>
+
+                <form id="chatForm">
+                    <input
+                        type="text"
+                        id="questionInput"
+                        name="question"
+                        placeholder="Ask a question about your document..."
+                        aria-label="Ask a question about your document"
+                        required
+                    >
+
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/chat.js"></script>
+</body>
+</html>

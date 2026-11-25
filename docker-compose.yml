@@ -1,0 +1,23 @@
+services:
+  db-service:
+    build: ./db-service
+    env_file: ./db-service/.env
+    volumes:
+      - dbdata:/app/data
+    # ports nahi diye: bahar se koi seedha service tak nahi pahunch sakta
+
+  app:
+    build: .
+    env_file: .env
+    environment:
+      - SERVICE_URL=http://db-service:8001
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./documents.json:/app/documents.json
+    depends_on:
+      - db-service
+
+volumes:
+  dbdata:

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Documents - Document AI</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <h2>Document AI</h2>
+            <p>Manage your documents</p>
+
+            <nav class="side-nav">
+                <a href="/" class="nav-link">Chat</a>
+                <a href="/documents" class="nav-link active">Documents</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="page-header">
+                <h1>Documents</h1>
+                <p>Upload files and see everything you have uploaded.</p>
+            </header>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <h2>Upload Documents</h2>
+
+                <p>Select one or more PDF, TXT, or DOCX files.</p>
+
+                <label for="fileInput" class="upload-box">
+                    <span class="upload-icon">↑</span>
+
+                    <strong>Click to select documents</strong>
+
+                    <span>PDF, TXT or DOCX files</span>
+                </label>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".pdf,.txt,.docx"
+                    multiple
+                >
+
+                <div id="selectedFiles"></div>
+
+                <button type="button" id="uploadButton">
+                    Upload Documents
+                </button>
+
+                <p id="uploadStatus" role="status"></p>
+            </section>
+
+            <!-- Document List Section -->
+            <section class="upload-section">
+                <h2>Your Documents</h2>
+
+                <p id="documentCount">0 documents uploaded</p>
+
+                <ul id="documentTable" class="doc-list">
+                    <li>Loading documents...</li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/app.js"></script>
+</body>
+</html>

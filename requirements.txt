@@ -1,0 +1,11 @@
+sentence-transformers
+pypdf
+numpy
+google-genai
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+python-docx
+requests
+cryptography
